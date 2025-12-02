@@ -31,6 +31,7 @@ class RpiGpioRts {
 		}
 		this.id = parseInt(config.id);
 		this.retrieveRollingCode();
+		this.repetitions = parseInt(config.repetitions) || 4
 		
 		this.buttons = {
 			My: 0x1,
@@ -177,7 +178,7 @@ class RpiGpioRts {
 		
 		const payloadData = this.getPayloadData(button);
 		
-		const waveform = this.getWaveform(payloadData, 4);
+		const waveform = this.getWaveform(payloadData, this.repetitions);
 		
 		// Sending waveform
 		output.digitalWrite(0);

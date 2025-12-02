@@ -26,6 +26,12 @@
 				"description": "Disable after the pairing phase to hide the Prog button",
 				"type": "boolean",
 				"default": true
+			},
+			"repetitions": {
+				"title": "Repetitions",
+				"description": "Repetitions of sent signal",
+				"type": "integer",
+				"default": 4
 			}
 		}
 	}

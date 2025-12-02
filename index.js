@@ -28,6 +28,9 @@ class SomfyRtsRemoteAccessory {
 			throw new Error(`Invalid or missing configuration.`);
 		}
 		this.config = config;
+
+		this.log.debug(`Config loaded: ${JSON.stringify(config)}`)
+	
 		this.emitter = new RpiGpioRts(log, config);
 		
 		// Delay to reset the switch after being pressed
